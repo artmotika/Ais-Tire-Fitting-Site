@@ -1,0 +1,189 @@
+{% extends "base.html" %} {% block title %}Бронирование{% endblock %}
+
+{% block content %}
+ <div class="booking-container container">
+     <div class="toast1">
+        <div class="toast-content">
+            <i class="fas fa-circle-xmark check"></i>
+            <div class="message">
+                <span class="text text-1">Прокол</span>
+                <span class="text text-2">Не выбран ...</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+        <div class="progress"></div>
+    </div>
+     <div class="body">
+         <div class="booking_form">
+            <div class="header">
+                <h2>Бронирование</h2>
+            </div>
+             <div class="booking_body">
+                <div class="pagination">
+                    <div class="number active">1</div>
+                    <div class="bar"></div>
+                    <div class="number">2</div>
+                    <div class="bar"></div>
+                    <div class="number">3</div>
+                    <div class="bar"></div>
+                    <div class="number">4</div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-info">
+                            <h4>Выберите тип услуги</h4>
+                            <span>Если не знаете что выбрать, выберите "другое"</span>
+                        </div>
+                        <div class="grid">
+                            <div class="col">
+                                <div class="service checkbox">
+                                    <input type="radio" id="season-4-wheels" name="service-type" value="1">
+                                    <label for="season-4-wheels" class="tires">Сезонная замена 4-ех колес</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="service checkbox">
+                                    <input type="radio" id="wheel-balancing" name="service-type" value="2">
+                                    <label for="wheel-balancing" class="wheel-alignment">Балансировка колес</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="service checkbox">
+                                    <input type="radio" id="punctured-wheels" name="service-type" value="3">
+                                    <label for="punctured-wheels" class="nail">Прокол колес</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="service checkbox">
+                                    <input type="radio" id="another-wheel" name="service-type" value="4">
+                                    <label for="another-wheel" class="instruments">Другое</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-info">
+                            <h4>Выбирите время</h4>
+                            <span>Нужно выбрать промежуток времени, чтобы увидеть точное доступное время</span>
+                        </div>
+                        <div class="wrapper-weekday">
+                            <ul class="row">
+                                <li data-tab="tab-1" tabindex="0" class="title" value="1">Пн</li>
+                                <li data-tab="tab-2" tabindex="0" class="title" value="2">Вт</li>
+                                <li data-tab="tab-3" tabindex="0" class="title" value="3">Ср</li>
+                                <li data-tab="tab-4" tabindex="0" class="title" value="4">Чт</li>
+                                <li data-tab="tab-5" tabindex="0" class="title" value="5">Пт</li>
+                                <li data-tab="tab-6" tabindex="0" class="title" value="6">Сб</li>
+                                <li data-tab="tab-7" tabindex="0" class="title" value="7">Вс</li>
+                            </ul>
+<!--                            <div class="block">-->
+<!--                                <div id="tab-1" class="content">-->
+
+<!--                                </div>-->
+<!--                                <div id="tab-2" class="content">-->
+
+<!--                                </div>-->
+<!--                                <div id="tab-3" class="content">-->
+
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="date-info">
+                            <span></span>
+                        </div>
+                        <div class="grid-interval">
+                            <div class="col">
+                                <div class="time-interval checkbox">
+                                    <input type="radio" id="time-interval-1" name="time-interval" value="1">
+                                    <label for="time-interval-1" id="time-interval-1-label">10:00-13:00</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="time-interval checkbox">
+                                    <input type="radio" id="time-interval-2" name="time-interval" value="2">
+                                    <label for="time-interval-2" id="time-interval-2-label">13:00-16:00</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="time-interval checkbox">
+                                    <input type="radio" id="time-interval-3" name="time-interval" value="3">
+                                    <label for="time-interval-3" id="time-interval-3-label">16:00-19:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-info">
+                            <h4>Выбирите удобное время</h4>
+                            <span>Место будет забронировано в это время</span>
+                        </div>
+                        <div class="grid-time">
+                            <div class="col">
+                                <div class="wrapper-time">
+                                    <input type="radio" id="time-1" name="time" value="1">
+                                    <label for="time-1">10:00-10:15</label>
+                                    <input type="radio" id="time-2" name="time" value="2">
+                                    <label for="time-2">10:15-10:30</label>
+                                    <input type="radio" id="time-3" name="time" value="3">
+                                    <label for="time-3">10:15-10:30</label>
+                                    <input type="radio" id="time-4" name="time" value="4">
+                                    <label for="time-4">10:15-10:30</label>
+                                    <input type="radio" id="time-5" name="time" value="5">
+                                    <label for="time-5">10:15-10:30</label>
+                                    <input type="radio" id="time-6" name="time" value="6">
+                                    <label for="time-6">10:15-10:30</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="confirmation">
+                            <div class="step-info">
+                                <h4>Подтверждение</h4>
+                                <span>Нужно приехать в салон за 5 минут и показать qr-код</span>
+                            </div>
+                            <div>
+                               <button>Подтвердить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="prev-next">
+                        <button class="prev">Назад</button>
+                        <button class="next">Дальше</button>
+                    </div>
+                </div>
+            </div>
+         </div>
+     </div>
+ </div>
+<!--    <div class="horizontal_scroll_booking_time">-->
+<!--      {% if booking_dict.get(10) %}-->
+<!--        {% for booking in booking_dict[10] %}-->
+<!--            <div class="time_item">-->
+<!--                <p>{{ booking.time_start_h }}:{{ booking.time_start_m }} - {{ booking.time_end_h }}:{{ booking.time_end_m }}</p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--      {% endif %}-->
+<!--    </div>-->
+<!--    <div class="horizontal_scroll_booking_time">-->
+<!--      {% if booking_dict.get(11) %}-->
+<!--        {% for booking in booking_dict[11] %}-->
+<!--            <div class="time_item">-->
+<!--                <p>{{ booking.time_start_h }}:{{ booking.time_start_m }} - {{ booking.time_end_h }}:{{ booking.time_end_m }}</p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--      {% endif %}-->
+<!--    </div>-->
+<!--    <div class="horizontal_scroll_booking_time">-->
+<!--      {% if booking_dict.get(12) %}-->
+<!--        {% for booking in booking_dict[12] %}-->
+<!--            <div class="time_item">-->
+<!--                <p>{{ booking.time_start_h }}:{{ booking.time_start_m }} - {{ booking.time_end_h }}:{{ booking.time_end_m }}</p>-->
+<!--            </div>-->
+<!--        {% endfor %}-->
+<!--      {% endif %}-->
+<!--    </div>-->
+<script src="../static/booking.js"></script>
+{% endblock %}
